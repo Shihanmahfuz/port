@@ -1,0 +1,80 @@
+{
+  "projects": [
+    {
+      "slug": "uae-sugar-tax",
+      "title": "UAE Sugar Tax Market Analysis",
+      "emoji": "\ud83d\udcc8",
+      "category": "Research / Data Engineering",
+      "date": "Nov 2025 \u2014 Present",
+      "summary": "Built a large-scale retail pricing dataset from 120+ websites to study the consumer impact of the UAE's sugar tax.",
+      "longDescription": "<h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px'>THE PROBLEM</h3><p>The UAE introduced a sugar tax, but its actual impact on consumer prices and product availability across different retail channels was not well-documented. Understanding the price pass-through rate required a dataset that did not yet exist.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHAT I DID</h3><p>Working as a Research Assistant at NYU Abu Dhabi, I designed and built a large-scale web scraping pipeline targeting 120+ JavaScript-rendered retail and e-commerce websites across the UAE.</p><ul><li>Built a general-purpose scraping framework using Python and Playwright to handle dynamically rendered pages, anti-bot protections, and varied site architectures</li><li>Collected and normalized 1M+ price and product data points across beverages, food items, and related categories</li><li>Cleaned and structured the data for econometric analysis</li><li>Ran regression discontinuity (RD) and difference-in-differences (DiD) analyses in R and Stata to estimate price pass-through rates and demand elasticities</li></ul><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>OUTPUT & RESULT</h3><p>Produced one of the most comprehensive retail pricing datasets for tax impact analysis in the UAE market. The scraping framework is reusable across domains and continues to collect data for ongoing research.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHY IT MATTERS</h3><p>This project demonstrates the ability to build data infrastructure from scratch and turn it into actionable economic insight \u2014 a core skill for research, consulting, and data-driven policy work.</p>",
+      "tags": ["Python", "Playwright", "R", "Stata", "Web Scraping"],
+      "stats": {
+        "Websites Scraped": "120+",
+        "Data Points": "1M+",
+        "Analysis Method": "RD / DiD"
+      },
+      "thumbnail": "",
+      "heroImage": "",
+      "gradient": "background: linear-gradient(135deg, #000033 0%, #000066 30%, #003366 60%, #006666 100%);",
+      "links": []
+    },
+    {
+      "slug": "mukhosh-publications",
+      "title": "Mukhosh Publications",
+      "emoji": "\ud83d\udcda",
+      "category": "Entrepreneurship / Publishing",
+      "date": "Jan 2021 \u2014 Apr 2023",
+      "summary": "Founded Bangladesh's first youth-oriented e-book publishing platform, growing it to 10K+ readers and a 4K community.",
+      "longDescription": "<h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px'>THE PROBLEM</h3><p>Young writers in Bangladesh had very few accessible platforms to publish their work. Traditional publishing was expensive and gatekept; digital publishing infrastructure for youth voices was essentially nonexistent.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHAT I DID</h3><p>I founded Mukhosh Publications in January 2021 as a digital-first publishing platform specifically for young Bangladeshi writers and creators.</p><ul><li>Built and managed the full editorial pipeline: submission review, editing, layout, and digital distribution</li><li>Published 4 digital magazines and 2 full-length books</li><li>Recruited and mentored young writers, building a creator community of 4,000+ members</li><li>Developed distribution strategy across social media and digital channels, reaching 10,000+ readers</li><li>Managed all operations as a solo founder for the first year before bringing on team members</li></ul><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>OUTPUT & RESULT</h3><p>Over two years, Mukhosh became a recognized platform in the Bangladeshi youth literary space. 6 total publications, 10,000+ readers across Bangladesh and the diaspora, and a sustainable community of emerging writers.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHY IT MATTERS</h3><p>This project demonstrates the ability to build institutions, not just complete tasks. From concept to community to scale \u2014 I owned every part of a real product lifecycle.</p>",
+      "tags": ["Publishing", "Community", "Leadership", "Editorial"],
+      "stats": {
+        "Publications": "4 Magazines + 2 Books",
+        "Readers": "10,000+",
+        "Community": "4,000+"
+      },
+      "thumbnail": "",
+      "heroImage": "",
+      "gradient": "background: linear-gradient(135deg, #330033, #660066, #990066);",
+      "links": []
+    },
+    {
+      "slug": "adr-week",
+      "title": "ADR Week Editorial Series",
+      "emoji": "\u270d\ufe0f",
+      "category": "Journalism / Editorial",
+      "date": "Dec 2025 \u2014 Mar 2026",
+      "summary": "Created a recurring editorial series for Abu Dhabi Review with 10+ published articles on lifestyle, policy, and community.",
+      "longDescription": "<h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px'>THE PROBLEM</h3><p>Abu Dhabi Review needed regular, high-quality editorial content covering local events, community stories, and lifestyle topics relevant to the Abu Dhabi audience. The publication needed a writer who could create a consistent series with editorial voice and reliability.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHAT I DID</h3><p>During my internship at Abu Dhabi Review, I created and maintained the \"ADR Week\" editorial series \u2014 a recurring column I conceived, pitched, and executed.</p><ul><li>Developed the series concept and editorial framework from scratch</li><li>Researched, wrote, and edited 10+ articles spanning lifestyle, local policy, and community coverage</li><li>Worked within a professional editorial review process with editors and fact-checking</li><li>Adapted writing style across different topics while maintaining consistent voice</li><li>Met weekly deadlines across the 4-month series run</li></ul><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>OUTPUT & RESULT</h3><p>10+ published articles on the Abu Dhabi Review platform. The series ran for 4 months and covered a range of topics that connected the Abu Dhabi community to relevant stories.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHY IT MATTERS</h3><p>This project demonstrates professional writing ability, editorial discipline, and the capacity to package information for public audiences consistently over time.</p>",
+      "tags": ["Writing", "Editorial", "Journalism"],
+      "stats": {
+        "Articles Published": "10+",
+        "Series Duration": "4 Months",
+        "Platform": "Abu Dhabi Review"
+      },
+      "thumbnail": "",
+      "heroImage": "",
+      "gradient": "background: linear-gradient(135deg, #003333, #006666, #009999);",
+      "links": []
+    },
+    {
+      "slug": "india-sanitation",
+      "title": "India Sanitation & Wealth Analysis",
+      "emoji": "\ud83d\udcca",
+      "category": "Research / Econometrics",
+      "date": "Nov 2025",
+      "summary": "Logistic regression analysis examining how household wealth shapes sanitation access in India. 636K+ households analyzed.",
+      "longDescription": "<h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px'>THE PROBLEM</h3><p>Access to improved sanitation in India varies dramatically by wealth and geography, but the interaction between household resources and infrastructure availability \u2014 particularly in rural areas \u2014 is not well understood at scale.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHAT I DID</h3><p>Using data from the National Family Health Survey (NFHS), I built a sequence of logistic regression models to examine how wealth, residence type, and household characteristics relate to improved sanitation access.</p><ul><li>Cleaned and recoded NFHS survey variables following WHO specifications for 636,000+ households</li><li>Constructed binary indicators for improved sanitation and improved water access</li><li>Built 7 logistic regression models with increasing complexity to isolate wealth effects</li><li>Analyzed Wealth \u00d7 Rural interaction terms to reveal how infrastructure constraints moderate the wealth-sanitation relationship</li><li>Produced descriptive statistics, model comparison tables, and coefficient interpretation</li></ul><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>KEY FINDINGS</h3><p>Wealth is strongly associated with higher odds of improved sanitation across all model specifications. However, rural households remain significantly less likely to have improved sanitation even after controlling for wealth. The interaction model reveals that infrastructure constraints in rural areas limit how effectively household resources translate into improved sanitation \u2014 meaning wealth buys less in rural India.</p><h3 style='color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px'>WHY IT MATTERS</h3><p>This project demonstrates the ability to work with real large-scale survey data, apply appropriate econometric methods, and produce interpretable findings relevant to development economics and public policy.</p>",
+      "tags": ["R", "Econometrics", "Logistic Regression", "NFHS Data"],
+      "stats": {
+        "Households": "636,000+",
+        "Models": "7 Logistic",
+        "Variables": "12+"
+      },
+      "thumbnail": "",
+      "heroImage": "",
+      "gradient": "background: linear-gradient(135deg, #1a0033, #330066, #4d0099);",
+      "links": []
+    }
+  ]
+}

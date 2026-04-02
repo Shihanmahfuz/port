@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing — shihanmahfuz.geocities.com</title>
+<meta name="description" content="Writing — Shihan Mahfuz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:wght@300;400;500;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+<script>window.BASE_URL = '';</script>
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="crt-vignette"></div>
+<div class="starfield">
+  <div class="star-layer star-layer-1"></div>
+  <div class="star-layer star-layer-2"></div>
+</div>
+
+<div class="main-content show" id="mainContent">
+
+  <!-- Navigation -->
+  <div class="project-nav-bar">
+    <a href="../" class="retro-action-btn">&larr; BACK TO HOMEPAGE</a>
+    <span class="project-nav-path" id="navPath">C:\writing\loading...</span>
+  </div>
+
+  <!-- Writing Window -->
+  <div class="win98 visible" id="writingWindow">
+    <div class="win98-titlebar">
+      <div class="win98-title" id="writingTitle">
+        <svg class="icon" viewBox="0 0 16 16"><rect x="2" y="1" width="12" height="14" fill="#fff" stroke="#000" stroke-width="1"/><line x1="5" y1="4" x2="12" y2="4" stroke="#000" stroke-width="1"/><line x1="5" y1="7" x2="12" y2="7" stroke="#000" stroke-width="1"/><line x1="5" y1="10" x2="10" y2="10" stroke="#000" stroke-width="1"/></svg>
+        Loading...
+      </div>
+      <div class="win98-buttons">
+        <button class="win98-btn" onclick="window.history.back()">_</button>
+        <button class="win98-btn">&square;</button>
+        <button class="win98-btn" onclick="window.location.href='../'">&times;</button>
+      </div>
+    </div>
+    <div class="win98-body" id="writingBody">
+      <div class="inset-panel dark">
+        <p style="color: var(--text-cyan); font-family: var(--mono); font-size: 14px;">Loading...</p>
+      </div>
+    </div>
+    <div class="win98-statusbar" id="writingStatus">
+      <span>Loading...</span><span></span>
+    </div>
+  </div>
+
+  <!-- Other Writings -->
+  <div class="win98 visible" id="otherWritingsWindow">
+    <div class="win98-titlebar">
+      <div class="win98-title">
+        <svg class="icon" viewBox="0 0 16 16"><rect x="2" y="1" width="12" height="14" fill="#fff" stroke="#000" stroke-width="1"/><line x1="5" y1="4" x2="12" y2="4" stroke="#000" stroke-width="1"/><line x1="5" y1="7" x2="12" y2="7" stroke="#000" stroke-width="1"/><line x1="5" y1="10" x2="10" y2="10" stroke="#000" stroke-width="1"/></svg>
+        C:\writing\ — Other Pieces
+      </div>
+      <div class="win98-buttons"><button class="win98-btn">_</button><button class="win98-btn">&square;</button><button class="win98-btn">&times;</button></div>
+    </div>
+    <div class="win98-body">
+      <div class="inset-panel dark">
+        <div class="interests-list" id="otherWritingsList"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Taskbar -->
+<div class="taskbar">
+  <button class="start-button" onclick="window.location.href='../'">
+    <div class="start-flag"><div></div><div></div><div></div><div></div></div>
+    Start
+  </button>
+  <div class="taskbar-items">
+    <div class="taskbar-item" onclick="window.location.href='../'">&#128196; Home</div>
+    <div class="taskbar-item" id="taskbarWritingName">&#9997;&#65039; Writing</div>
+  </div>
+  <div class="taskbar-clock">
+    <span style="font-size:10px">&#128266;</span>
+    <span id="taskbarClock"></span>
+  </div>
+</div>
+
+<script>
+const writings = {
+  'newsletter': {
+    title: 'Newsletter — Substack',
+    emoji: '\ud83d\udcf0',
+    description: '<p>Essays, thoughts, and stories published on Substack. Subscribe for regular updates on economics, culture, and life.</p><p style="margin-top:16px"><a href="https://shihan.substack.com" target="_blank" class="retro-action-btn" style="display:inline-block">Visit Substack &rarr;</a></p>',
+    status: 'Active'
+  },
+  'essay-1': {
+    title: 'Essay — Coming Soon',
+    emoji: '\ud83d\udcdd',
+    description: '<p>This page will feature an upcoming essay or article.</p><p style="color:var(--text-magenta);margin-top:16px">~ Check back later for updates! ~</p>',
+    status: 'Draft'
+  },
+  'blog-1': {
+    title: 'Blog Post — Coming Soon',
+    emoji: '\ud83d\udcd6',
+    description: '<p>This page will feature a blog post or long-form piece.</p><p style="color:var(--text-magenta);margin-top:16px">~ Check back later for updates! ~</p>',
+    status: 'Draft'
+  }
+};
+
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id || !writings[id]) {
+    window.location.href = '../';
+    return;
+  }
+
+  const w = writings[id];
+
+  document.title = `${w.title} \u2014 shihanmahfuz.geocities.com`;
+  document.getElementById('navPath').textContent = `C:\\writing\\${id}`;
+  document.getElementById('writingTitle').innerHTML = `
+    <svg class="icon" viewBox="0 0 16 16"><rect x="2" y="1" width="12" height="14" fill="#fff" stroke="#000" stroke-width="1"/><line x1="5" y1="4" x2="12" y2="4" stroke="#000" stroke-width="1"/><line x1="5" y1="7" x2="12" y2="7" stroke="#000" stroke-width="1"/><line x1="5" y1="10" x2="10" y2="10" stroke="#000" stroke-width="1"/></svg>
+    ${w.emoji} ${w.title}
+  `;
+
+  const tbn = document.getElementById('taskbarWritingName');
+  if (tbn) tbn.textContent = `\u270d\ufe0f ${w.title}`;
+
+  document.getElementById('writingBody').innerHTML = `
+    <div class="inset-panel dark">
+      <div class="project-hero project-hero-placeholder" style="height:160px;">
+        <span style="font-size:72px;opacity:0.25;position:relative;z-index:1">${w.emoji}</span>
+      </div>
+      <div style="padding:16px 0 8px">
+        <p style="color:var(--text-yellow);font-family:var(--pixel);font-size:9px;margin-bottom:12px">// ${w.title.toUpperCase()}.TXT</p>
+      </div>
+    </div>
+    <div class="inset-panel dark" style="margin-top:12px">
+      <p style="color:var(--text-yellow);font-family:var(--pixel);font-size:9px;margin-bottom:12px">// CONTENT.TXT</p>
+      <div class="project-long-desc">
+        ${w.description}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('writingStatus').innerHTML = `
+    <span>${w.title}</span><span>${w.status}</span>
+  `;
+
+  // Other writings
+  const list = document.getElementById('otherWritingsList');
+  Object.entries(writings).forEach(([key, item]) => {
+    if (key === id) return;
+    const a = document.createElement('a');
+    a.href = `index.html?id=${key}`;
+    a.className = 'interest-item';
+    a.innerHTML = `<span>${item.emoji} ${item.title}</span>`;
+    list.appendChild(a);
+  });
+})();
+
+// Cursor Trail
+const trailColors = ['#00ff00','#00ffff','#ffff00','#ff00ff','#ff8800','#ff0000'];
+let trailCount = 0;
+document.addEventListener('mousemove', e => {
+  if (++trailCount % 3 !== 0) return;
+  const p = document.createElement('div');
+  p.className = 'trail-particle';
+  const s = Math.random() * 4 + 2;
+  const c = trailColors[Math.floor(Math.random() * trailColors.length)];
+  p.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;width:${s}px;height:${s}px;background:${c};box-shadow:0 0 ${s*2}px ${c}`;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 800);
+});
+
+// Clock
+function updateClock() {
+  const n = new Date();
+  const h = n.getHours(), m = n.getMinutes().toString().padStart(2,'0');
+  const el = document.getElementById('taskbarClock');
+  if (el) el.textContent = `${h%12||12}:${m} ${h>=12?'PM':'AM'}`;
+}
+updateClock(); setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

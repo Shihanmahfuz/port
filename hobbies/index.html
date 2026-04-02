@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hobby — shihanmahfuz.geocities.com</title>
+<meta name="description" content="Interests & Hobbies — Shihan Mahfuz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:wght@300;400;500;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+<script>window.BASE_URL = '';</script>
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="crt-vignette"></div>
+<div class="starfield">
+  <div class="star-layer star-layer-1"></div>
+  <div class="star-layer star-layer-2"></div>
+</div>
+
+<div class="main-content show" id="mainContent">
+
+  <!-- Navigation -->
+  <div class="project-nav-bar">
+    <a href="../" class="retro-action-btn">&larr; BACK TO HOMEPAGE</a>
+    <span class="project-nav-path" id="navPath">C:\hobbies\loading...</span>
+  </div>
+
+  <!-- Hobby Window -->
+  <div class="win98 visible" id="hobbyWindow">
+    <div class="win98-titlebar">
+      <div class="win98-title" id="hobbyTitle">
+        <svg class="icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="1"/><text x="5" y="11" font-size="8" fill="#fff" font-family="serif">&#9829;</text></svg>
+        Loading...
+      </div>
+      <div class="win98-buttons">
+        <button class="win98-btn" onclick="window.history.back()">_</button>
+        <button class="win98-btn">&square;</button>
+        <button class="win98-btn" onclick="window.location.href='../'">&times;</button>
+      </div>
+    </div>
+    <div class="win98-body" id="hobbyBody">
+      <div class="inset-panel dark">
+        <p style="color: var(--text-cyan); font-family: var(--mono); font-size: 14px;">Loading...</p>
+      </div>
+    </div>
+    <div class="win98-statusbar" id="hobbyStatus">
+      <span>Loading...</span><span></span>
+    </div>
+  </div>
+
+  <!-- Other Hobbies -->
+  <div class="win98 visible" id="otherHobbiesWindow">
+    <div class="win98-titlebar">
+      <div class="win98-title">
+        <svg class="icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="1"/><text x="5" y="11" font-size="8" fill="#fff" font-family="serif">&#9829;</text></svg>
+        C:\hobbies\ — Other Interests
+      </div>
+      <div class="win98-buttons"><button class="win98-btn">_</button><button class="win98-btn">&square;</button><button class="win98-btn">&times;</button></div>
+    </div>
+    <div class="win98-body">
+      <div class="inset-panel dark">
+        <div class="interests-list" id="otherHobbiesList"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Taskbar -->
+<div class="taskbar">
+  <button class="start-button" onclick="window.location.href='../'">
+    <div class="start-flag"><div></div><div></div><div></div><div></div></div>
+    Start
+  </button>
+  <div class="taskbar-items">
+    <div class="taskbar-item" onclick="window.location.href='../'">&#128196; Home</div>
+    <div class="taskbar-item" id="taskbarHobbyName">&#9829; Hobby</div>
+  </div>
+  <div class="taskbar-clock">
+    <span style="font-size:10px">&#128266;</span>
+    <span id="taskbarClock"></span>
+  </div>
+</div>
+
+<script>
+const hobbies = {
+  'food': { title: 'Food Exploration', emoji: '\ud83c\udf73', description: 'Content coming soon! This page will feature my food adventures, favorite restaurants, and culinary discoveries.' },
+  'cooking': { title: 'Cooking', emoji: '\ud83c\udf72', description: 'Content coming soon! This page will showcase my cooking experiments, recipes, and kitchen stories.' },
+  'writing': { title: 'Writing', emoji: '\u270d\ufe0f', description: 'Content coming soon! This page will feature my creative writing, essays, and literary explorations.' },
+  'documentaries': { title: 'Political Documentaries', emoji: '\ud83c\udfa5', description: 'Content coming soon! This page will share my favorite political documentaries and reviews.' },
+  'movies': { title: 'Movies', emoji: '\ud83c\udfac', description: 'Content coming soon! This page will feature my movie reviews, recommendations, and film thoughts.' },
+  'comedy': { title: 'Comedy Shows', emoji: '\ud83d\ude02', description: 'Content coming soon! This page will share my favorite comedy specials, shows, and comedians.' },
+  'content-creation': { title: 'Content Creation', emoji: '\ud83d\udcda', description: 'Content coming soon! This page will document my content creation journey and projects.' },
+  'teaching': { title: 'Teaching', emoji: '\ud83c\udf93', description: 'Content coming soon! This page will share my teaching experiences and educational philosophy.' }
+};
+
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+
+  if (!id || !hobbies[id]) {
+    window.location.href = '../';
+    return;
+  }
+
+  const hobby = hobbies[id];
+
+  document.title = `${hobby.title} \u2014 shihanmahfuz.geocities.com`;
+  document.getElementById('navPath').textContent = `C:\\hobbies\\${id}`;
+  document.getElementById('hobbyTitle').innerHTML = `
+    <svg class="icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="#ff0000" stroke="#aa0000" stroke-width="1"/><text x="5" y="11" font-size="8" fill="#fff" font-family="serif">\u2665</text></svg>
+    ${hobby.emoji} ${hobby.title} \u2014 Interest Page
+  `;
+
+  const tbn = document.getElementById('taskbarHobbyName');
+  if (tbn) tbn.textContent = `\u2665 ${hobby.title}`;
+
+  document.getElementById('hobbyBody').innerHTML = `
+    <div class="inset-panel dark">
+      <div class="project-hero project-hero-placeholder" style="height:160px;">
+        <span style="font-size:72px;opacity:0.25;position:relative;z-index:1">${hobby.emoji}</span>
+      </div>
+      <div style="padding:16px 0 8px">
+        <p style="color:var(--text-yellow);font-family:var(--pixel);font-size:9px;margin-bottom:12px">// ${hobby.title.toUpperCase()}.TXT</p>
+      </div>
+    </div>
+    <div class="inset-panel dark" style="margin-top:12px">
+      <p style="color:var(--text-yellow);font-family:var(--pixel);font-size:9px;margin-bottom:12px">// PAGE_CONTENT.TXT</p>
+      <div class="project-long-desc">
+        <p>${hobby.description}</p>
+        <p style="color:var(--text-magenta);margin-top:16px">~ Check back later for updates! ~</p>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('hobbyStatus').innerHTML = `
+    <span>${hobby.title}</span><span>Under construction</span>
+  `;
+
+  // Other hobbies
+  const list = document.getElementById('otherHobbiesList');
+  Object.entries(hobbies).forEach(([key, h]) => {
+    if (key === id) return;
+    const a = document.createElement('a');
+    a.href = `index.html?id=${key}`;
+    a.className = 'interest-item';
+    a.innerHTML = `<span>${h.emoji} ${h.title}</span>`;
+    list.appendChild(a);
+  });
+})();
+
+// Cursor Trail
+const trailColors = ['#00ff00','#00ffff','#ffff00','#ff00ff','#ff8800','#ff0000'];
+let trailCount = 0;
+document.addEventListener('mousemove', e => {
+  if (++trailCount % 3 !== 0) return;
+  const p = document.createElement('div');
+  p.className = 'trail-particle';
+  const s = Math.random() * 4 + 2;
+  const c = trailColors[Math.floor(Math.random() * trailColors.length)];
+  p.style.cssText = `left:${e.clientX}px;top:${e.clientY}px;width:${s}px;height:${s}px;background:${c};box-shadow:0 0 ${s*2}px ${c}`;
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 800);
+});
+
+// Clock
+function updateClock() {
+  const n = new Date();
+  const h = n.getHours(), m = n.getMinutes().toString().padStart(2,'0');
+  const el = document.getElementById('taskbarClock');
+  if (el) el.textContent = `${h%12||12}:${m} ${h>=12?'PM':'AM'}`;
+}
+updateClock(); setInterval(updateClock, 1000);
+</script>
+</body>
+</html>

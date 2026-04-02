@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — Shihan Mahfuz</title>
+<meta name="description" content="Project Details — Shihan Mahfuz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:wght@300;400;500;600&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+
+<div class="crt-overlay"></div>
+<div class="crt-vignette"></div>
+<div class="starfield">
+  <div class="star-layer star-layer-1"></div>
+  <div class="star-layer star-layer-2"></div>
+</div>
+
+<div class="main-content show" id="mainContent">
+
+  <div class="project-nav-bar">
+    <a href="../index.html" class="retro-action-btn">&larr; BACK TO HOMEPAGE</a>
+    <span class="project-nav-path" id="navPath">D:\projects\loading...</span>
+  </div>
+
+  <div class="win98 visible" id="projectWindow">
+    <div class="win98-titlebar">
+      <div class="win98-title" id="projectTitle">
+        <svg class="icon" viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="10" fill="#fff" stroke="#000" stroke-width="1"/><rect x="2" y="2" width="6" height="3" fill="#ffcc00" stroke="#aa8800" stroke-width="0.5"/></svg>
+        Loading project...
+      </div>
+      <div class="win98-buttons">
+        <button class="win98-btn" onclick="window.history.back()">_</button>
+        <button class="win98-btn">&square;</button>
+        <button class="win98-btn" onclick="window.location.href='../index.html'">&times;</button>
+      </div>
+    </div>
+    <div class="win98-body" id="projectBody">
+      <div class="inset-panel dark">
+        <p style="color: var(--text-cyan); font-family: var(--mono); font-size: 14px;">Loading project data...</p>
+      </div>
+    </div>
+    <div class="win98-statusbar" id="projectStatus">
+      <span>Loading...</span><span></span>
+    </div>
+  </div>
+
+  <div class="win98 visible" id="otherProjectsWindow" style="display:none;">
+    <div class="win98-titlebar">
+      <div class="win98-title">
+        <svg class="icon" viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="10" fill="#fff" stroke="#000" stroke-width="1"/><rect x="2" y="2" width="6" height="3" fill="#ffcc00" stroke="#aa8800" stroke-width="0.5"/></svg>
+        D:\projects\ — Other Projects
+      </div>
+      <div class="win98-buttons"><button class="win98-btn">_</button><button class="win98-btn">&square;</button><button class="win98-btn">&times;</button></div>
+    </div>
+    <div class="win98-body" style="padding: 8px;">
+      <div class="projects-grid" id="otherProjectsGrid"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="taskbar">
+  <button class="start-button" onclick="window.location.href='../index.html'">
+    <div class="start-flag"><div></div><div></div><div></div><div></div></div>
+    Start
+  </button>
+  <div class="taskbar-items">
+    <div class="taskbar-item" onclick="window.location.href='../index.html'">&#128196; Home</div>
+    <div class="taskbar-item" id="taskbarProjectName">&#128193; Project</div>
+  </div>
+  <div class="taskbar-clock">
+    <span style="font-size:10px">&#128266;</span>
+    <span id="taskbarClock"></span>
+  </div>
+</div>
+
+<script>
+// ===== INLINE PROJECT DATA (no fetch needed) =====
+const PROJECTS = [
+  {
+    slug: 'uae-sugar-tax',
+    title: 'UAE Sugar Tax Market Analysis',
+    emoji: '\ud83d\udcc8',
+    category: 'Research / Data Engineering',
+    date: 'Nov 2025 \u2014 Present',
+    summary: 'Built a large-scale retail pricing dataset from 120+ websites to study the consumer impact of the UAE\'s sugar tax.',
+    longDescription: '<h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px">THE PROBLEM</h3><p>The UAE introduced a sugar tax, but its actual impact on consumer prices and product availability across different retail channels was not well-documented. Understanding the price pass-through rate required a dataset that did not yet exist.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHAT I DID</h3><p>Working as a Research Assistant at NYU Abu Dhabi, I designed and built a large-scale web scraping pipeline targeting 120+ JavaScript-rendered retail and e-commerce websites across the UAE.</p><ul><li>Built a general-purpose scraping framework using Python and Playwright to handle dynamically rendered pages, anti-bot protections, and varied site architectures</li><li>Collected and normalized 1M+ price and product data points across beverages, food items, and related categories</li><li>Cleaned and structured the data for econometric analysis</li><li>Ran regression discontinuity (RD) and difference-in-differences (DiD) analyses in R and Stata to estimate price pass-through rates and demand elasticities</li></ul><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">OUTPUT & RESULT</h3><p>Produced one of the most comprehensive retail pricing datasets for tax impact analysis in the UAE market. The scraping framework is reusable across domains and continues to collect data for ongoing research.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHY IT MATTERS</h3><p>This project demonstrates the ability to build data infrastructure from scratch and turn it into actionable economic insight \u2014 a core skill for research, consulting, and data-driven policy work.</p>',
+    tags: ['Python', 'Playwright', 'R', 'Stata', 'Web Scraping'],
+    stats: { 'Websites Scraped': '120+', 'Data Points': '1M+', 'Analysis Method': 'RD / DiD' },
+    gradient: 'background: linear-gradient(135deg, #000033 0%, #000066 30%, #003366 60%, #006666 100%);'
+  },
+  {
+    slug: 'mukhosh-publications',
+    title: 'Mukhosh Publications',
+    emoji: '\ud83d\udcda',
+    category: 'Entrepreneurship / Publishing',
+    date: 'Jan 2021 \u2014 Apr 2023',
+    summary: 'Founded Bangladesh\'s first youth-oriented e-book publishing platform, growing it to 10K+ readers and a 4K community.',
+    longDescription: '<h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px">THE PROBLEM</h3><p>Young writers in Bangladesh had very few accessible platforms to publish their work. Traditional publishing was expensive and gatekept; digital publishing infrastructure for youth voices was essentially nonexistent.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHAT I DID</h3><p>I founded Mukhosh Publications in January 2021 as a digital-first publishing platform specifically for young Bangladeshi writers and creators.</p><ul><li>Built and managed the full editorial pipeline: submission review, editing, layout, and digital distribution</li><li>Published 4 digital magazines and 2 full-length books</li><li>Recruited and mentored young writers, building a creator community of 4,000+ members</li><li>Developed distribution strategy across social media and digital channels, reaching 10,000+ readers</li><li>Managed all operations as a solo founder for the first year before bringing on team members</li></ul><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">OUTPUT & RESULT</h3><p>Over two years, Mukhosh became a recognized platform in the Bangladeshi youth literary space. 6 total publications, 10,000+ readers across Bangladesh and the diaspora, and a sustainable community of emerging writers.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHY IT MATTERS</h3><p>This project demonstrates the ability to build institutions, not just complete tasks. From concept to community to scale \u2014 I owned every part of a real product lifecycle.</p>',
+    tags: ['Publishing', 'Community', 'Leadership', 'Editorial'],
+    stats: { 'Publications': '4 Magazines + 2 Books', 'Readers': '10,000+', 'Community': '4,000+' },
+    gradient: 'background: linear-gradient(135deg, #330033, #660066, #990066);'
+  },
+  {
+    slug: 'adr-week',
+    title: 'ADR Week Editorial Series',
+    emoji: '\u270d\ufe0f',
+    category: 'Journalism / Editorial',
+    date: 'Dec 2025 \u2014 Mar 2026',
+    summary: 'Created a recurring editorial series for Abu Dhabi Review with 10+ published articles on lifestyle, policy, and community.',
+    longDescription: '<h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px">THE PROBLEM</h3><p>Abu Dhabi Review needed regular, high-quality editorial content covering local events, community stories, and lifestyle topics relevant to the Abu Dhabi audience. The publication needed a writer who could create a consistent series with editorial voice and reliability.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHAT I DID</h3><p>During my internship at Abu Dhabi Review, I created and maintained the "ADR Week" editorial series \u2014 a recurring column I conceived, pitched, and executed.</p><ul><li>Developed the series concept and editorial framework from scratch</li><li>Researched, wrote, and edited 10+ articles spanning lifestyle, local policy, and community coverage</li><li>Worked within a professional editorial review process with editors and fact-checking</li><li>Adapted writing style across different topics while maintaining consistent voice</li><li>Met weekly deadlines across the 4-month series run</li></ul><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">OUTPUT & RESULT</h3><p>10+ published articles on the Abu Dhabi Review platform. The series ran for 4 months and covered a range of topics that connected the Abu Dhabi community to relevant stories.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHY IT MATTERS</h3><p>This project demonstrates professional writing ability, editorial discipline, and the capacity to package information for public audiences consistently over time.</p>',
+    tags: ['Writing', 'Editorial', 'Journalism'],
+    stats: { 'Articles Published': '10+', 'Series Duration': '4 Months', 'Platform': 'Abu Dhabi Review' },
+    gradient: 'background: linear-gradient(135deg, #003333, #006666, #009999);'
+  },
+  {
+    slug: 'india-sanitation',
+    title: 'India Sanitation & Wealth Analysis',
+    emoji: '\ud83d\udcca',
+    category: 'Research / Econometrics',
+    date: 'Nov 2025',
+    summary: 'Logistic regression analysis examining how household wealth shapes sanitation access in India. 636K+ households analyzed.',
+    longDescription: '<h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin-bottom:12px">THE PROBLEM</h3><p>Access to improved sanitation in India varies dramatically by wealth and geography, but the interaction between household resources and infrastructure availability \u2014 particularly in rural areas \u2014 is not well understood at scale.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHAT I DID</h3><p>Using data from the National Family Health Survey (NFHS), I built a sequence of logistic regression models to examine how wealth, residence type, and household characteristics relate to improved sanitation access.</p><ul><li>Cleaned and recoded NFHS survey variables following WHO specifications for 636,000+ households</li><li>Constructed binary indicators for improved sanitation and improved water access</li><li>Built 7 logistic regression models with increasing complexity to isolate wealth effects</li><li>Analyzed Wealth \u00d7 Rural interaction terms to reveal how infrastructure constraints moderate the wealth-sanitation relationship</li><li>Produced descriptive statistics, model comparison tables, and coefficient interpretation</li></ul><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">KEY FINDINGS</h3><p>Wealth is strongly associated with higher odds of improved sanitation across all model specifications. However, rural households remain significantly less likely to have improved sanitation even after controlling for wealth. The interaction model reveals that infrastructure constraints in rural areas limit how effectively household resources translate into improved sanitation \u2014 meaning wealth buys less in rural India.</p><h3 style="color:#ffff00;font-family:Silkscreen,monospace;font-size:13px;margin:20px 0 12px">WHY IT MATTERS</h3><p>This project demonstrates the ability to work with real large-scale survey data, apply appropriate econometric methods, and produce interpretable findings relevant to development economics and public policy.</p>',
+    tags: ['R', 'Econometrics', 'Logistic Regression', 'NFHS Data'],
+    stats: { 'Households': '636,000+', 'Models': '7 Logistic', 'Variables': '12+' },
+    gradient: 'background: linear-gradient(135deg, #1a0033, #330066, #4d0099);'
+  }
+];
+
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('id');
+
+  if (!slug) { window.location.href = '../index.html'; return; }
+
+  const project = PROJECTS.find(p => p.slug === slug);
+  if (!project) {
+    document.getElementById('projectBody').innerHTML = '<div class="inset-panel dark"><p style="color:#ff0000;font-family:var(--pixel);font-size:9px;margin-bottom:12px">ERROR: Project not found.</p><a href="../index.html" class="retro-action-btn">&larr; RETURN HOME</a></div>';
+    document.getElementById('projectStatus').innerHTML = '<span>Error</span><span>404</span>';
+    return;
+  }
+
+  document.title = project.title + ' \u2014 Shihan Mahfuz';
+  document.getElementById('navPath').textContent = 'D:\\projects\\' + slug;
+
+  const tbn = document.getElementById('taskbarProjectName');
+  if (tbn) tbn.textContent = '\ud83d\udcc2 ' + project.title;
+
+  document.getElementById('projectTitle').innerHTML =
+    '<svg class="icon" viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="10" fill="#fff" stroke="#000" stroke-width="1"/><rect x="2" y="2" width="6" height="3" fill="#ffcc00" stroke="#aa8800" stroke-width="0.5"/></svg> ' +
+    (project.emoji || '') + ' ' + project.title + ' \u2014 Details';
+
+  // Hero
+  const heroHTML = '<div class="project-hero project-hero-placeholder" style="' + (project.gradient || '') + '"><span style="font-size:72px;opacity:0.25;position:relative;z-index:1">' + (project.emoji || '\ud83d\udcc2') + '</span></div>';
+
+  const tagsHTML = project.tags.map(function(t) { return '<span class="project-tag">' + t + '</span>'; }).join('');
+
+  const statsHTML = project.stats
+    ? Object.keys(project.stats).map(function(k) {
+        return '<div class="stat-block"><div class="stat-value">' + project.stats[k] + '</div><div class="stat-key">' + k + '</div></div>';
+      }).join('')
+    : '';
+
+  document.getElementById('projectBody').innerHTML =
+    '<div class="inset-panel dark">' + heroHTML +
+    '<div class="project-meta"><div class="project-tags" style="margin-bottom:12px">' + tagsHTML + '</div>' +
+    '<div class="project-meta-date">' + project.date + ' &nbsp;|&nbsp; ' + (project.category || 'Project') + '</div></div></div>' +
+    (statsHTML ? '<div class="stats-row">' + statsHTML + '</div>' : '') +
+    '<div class="inset-panel dark" style="margin-top:12px"><p style="color:var(--text-yellow);font-family:var(--pixel);font-size:9px;margin-bottom:12px">// PROJECT_DETAILS.TXT</p><div class="project-long-desc">' + project.longDescription + '</div></div>';
+
+  document.getElementById('projectStatus').innerHTML =
+    '<span>' + project.tags.join(' | ') + '</span><span>' + project.date + '</span>';
+
+  // Other projects
+  const others = PROJECTS.filter(function(p) { return p.slug !== slug; });
+  if (others.length > 0) {
+    var otherWin = document.getElementById('otherProjectsWindow');
+    var otherGrid = document.getElementById('otherProjectsGrid');
+    if (otherWin && otherGrid) {
+      otherWin.style.display = '';
+      others.forEach(function(p) {
+        var a = document.createElement('a');
+        a.className = 'project-card';
+        a.href = 'index.html?id=' + p.slug;
+        a.innerHTML =
+          '<div class="project-card-thumb" style="' + (p.gradient || '') + '">' +
+          '<span style="font-size:36px;opacity:0.4;position:relative;z-index:1">' + (p.emoji || '') + '</span></div>' +
+          '<div class="project-info"><h3>' + (p.emoji || '') + ' ' + p.title + '</h3><p>' + p.summary + '</p></div>';
+        otherGrid.appendChild(a);
+      });
+    }
+  }
+})();
+
+// Clock
+function updateClock() {
+  var n = new Date(), h = n.getHours(), m = n.getMinutes().toString().padStart(2,'0');
+  var el = document.getElementById('taskbarClock');
+  if (el) el.textContent = (h%12||12) + ':' + m + ' ' + (h>=12?'PM':'AM');
+}
+updateClock(); setInterval(updateClock, 1000);
+
+// Cursor Trail
+var trailCount = 0;
+var trailColors = ['#00ff00','#00ffff','#ffff00','#ff00ff','#ff8800','#ff0000'];
+document.addEventListener('mousemove', function(e) {
+  if (++trailCount % 3 !== 0) return;
+  var p = document.createElement('div'); p.className = 'trail-particle';
+  var s = Math.random() * 4 + 2;
+  var c = trailColors[Math.floor(Math.random() * trailColors.length)];
+  p.style.cssText = 'left:'+e.clientX+'px;top:'+e.clientY+'px;width:'+s+'px;height:'+s+'px;background:'+c+';box-shadow:0 0 '+(s*2)+'px '+c;
+  document.body.appendChild(p);
+  setTimeout(function() { p.remove(); }, 800);
+});
+</script>
+</body>
+</html>
